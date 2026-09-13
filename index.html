@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="모임의 마음을 담은 초대장을 만들고 공유하세요">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23191919'/%3E%3Cpath d='M10 18h44v28H10zM10 18l22 18 22-18' fill='none' stroke='%23EEFF8F' stroke-width='4'/%3E%3C/svg%3E">
+<title>모아 초대장 만들기</title><link rel="stylesheet" href="styles.css"><script src="script.js" defer></script>
+</head>
+<body>
+<header class="topbar"><div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 8h26v18H3zM3 8l13 11L29 8"/></svg><span>모아</span></div><span class="top-note">초대장 만들기</span></header>
+<main class="workspace">
+<section class="editor" aria-labelledby="editor-title"><div class="intro"><h1 id="editor-title">함께할 시간을<br>초대장에 담아요</h1><p>내용을 적으면 초대장이 바로 바뀝니다</p></div>
+<form id="invitation-form">
+<section class="form-section" aria-labelledby="story-title"><div class="section-heading"><span class="step">01</span><h2 id="story-title">모임 이야기</h2></div>
+<div class="field"><label for="title">모임 이름 <span class="required">필수</span></label><input id="title" name="title" maxlength="60" required placeholder="우리들의 여름 저녁" value="우리들의 여름 저녁"></div>
+<div class="field"><label for="purpose">모임의 의도와 소개</label><textarea id="purpose" name="purpose" rows="3" maxlength="300" placeholder="어떤 마음으로 모이나요">좋아하는 사람들과 맛있는 음식을 나누며, 느긋하게 여름밤을 보내요. 편한 마음으로 와주세요.</textarea></div>
+<div class="field-grid"><div class="field"><label for="host">초대하는 사람</label><input id="host" name="host" maxlength="50" placeholder="이름 또는 모임" value="지민 드림"></div><div class="field"><label for="capacity">예상 인원</label><div class="input-suffix"><input id="capacity" name="capacity" type="number" min="1" max="10000" value="12"><span>명</span></div></div></div>
+</section>
+<section class="form-section" aria-labelledby="when-title"><div class="section-heading"><span class="step">02</span><h2 id="when-title">언제 어디서</h2></div>
+<div class="field-grid"><div class="field"><label for="date">날짜 <span class="required">필수</span></label><input id="date" name="date" type="date" required></div><div class="field"><label for="time">시작 시간</label><input id="time" name="time" type="time" value="18:30"></div></div>
+<div class="field"><label for="place">장소 이름</label><input id="place" name="place" maxlength="80" placeholder="작은 정원" value="작은 정원"></div>
+<div class="field"><label for="address">주소와 찾아오는 길</label><textarea id="address" name="address" rows="3" maxlength="400" placeholder="서울시 마포구 연남로 32&#10;2층, 연남역 3번 출구에서 도보 5분">서울시 마포구 연남로 32
+2층, 연남역 3번 출구에서 도보 5분</textarea></div>
+<p class="field-help">첫 줄에 도로명과 건물번호를 적으면 지도에서 바로 찾을 수 있습니다</p></section>
+<section class="form-section" aria-labelledby="design-title"><div class="section-heading"><span class="step">03</span><h2 id="design-title">색과 분위기</h2></div>
+<fieldset class="theme-field"><legend>첨부 색상표에서 고른 조합</legend><div class="theme-options">
+<label class="theme-choice"><input type="radio" name="theme" value="lime" checked><span class="swatch lime" aria-hidden="true"><i></i><i></i></span><span>라임 검정</span></label>
+<label class="theme-choice"><input type="radio" name="theme" value="mint"><span class="swatch mint" aria-hidden="true"><i></i><i></i></span><span>민트 청록</span></label>
+<label class="theme-choice"><input type="radio" name="theme" value="blue"><span class="swatch blue" aria-hidden="true"><i></i><i></i></span><span>하늘 파랑</span></label>
+<label class="theme-choice"><input type="radio" name="theme" value="orange"><span class="swatch orange" aria-hidden="true"><i></i><i></i></span><span>복숭아 주황</span></label>
+<label class="theme-choice"><input type="radio" name="theme" value="pink"><span class="swatch pink" aria-hidden="true"><i></i><i></i></span><span>분홍 보라</span></label>
+<label class="theme-choice"><input type="radio" name="theme" value="gray"><span class="swatch gray" aria-hidden="true"><i></i><i></i></span><span>흑백</span></label>
+</div></fieldset><div class="field"><label for="closing">마지막 한마디</label><input id="closing" name="closing" maxlength="100" placeholder="그날 만나요" value="그날 반가운 얼굴로 만나요"></div></section>
+</form></section>
+<aside class="preview-panel" aria-labelledby="preview-title"><div class="preview-top"><h2 id="preview-title">초대장 미리보기</h2><span>입력과 함께 바뀝니다</span></div>
+<article id="card" class="card theme-lime" aria-label="초대장"><div class="card-ink card-ink-one" aria-hidden="true"></div><div class="card-ink card-ink-two" aria-hidden="true"></div><div class="card-inner"><div class="card-masthead"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 8h26v18H3zM3 8l13 11L29 8"/></svg><span>초대합니다</span></div><h3 id="card-title"></h3><p id="card-purpose" class="card-purpose"></p><div class="card-details"><div class="detail"><span class="detail-label">날짜와 시간</span><strong id="card-date"></strong></div><div class="detail"><span class="detail-label">장소</span><strong id="card-place"></strong><span id="card-address"></span></div><div id="capacity-detail" class="detail"><span class="detail-label">함께하는 인원</span><strong id="card-capacity"></strong></div></div><a id="map-link" class="map-link" target="_blank" rel="noopener noreferrer" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20l6-2 6 2 6-2V4l-6 2-6-2-6 2zM9 4v14M15 6v14"/></svg>지도에서 위치 보기</a><div class="card-footer"><p id="card-closing"></p><span id="card-host"></span></div></div></article>
+<div class="actions"><button id="share" class="primary-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m0 0L7 8m5-5 5 5M4 14v6h16v-6"/></svg>공유 링크 복사</button><button id="print" class="secondary-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H3v-8h18v8h-3M6 15h12v6H6z"/></svg>인쇄 · PDF 저장</button></div><p class="action-note">링크에 초대장 내용이 담깁니다 민감한 정보는 넣지 마세요</p><p id="status" class="status" role="status" aria-live="polite"></p>
+</aside></main></body></html>
